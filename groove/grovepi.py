@@ -105,7 +105,7 @@ def analogRead(pin):
     write_i2c_block(address, aRead_cmd + [pin, unused, unused])
     read_i2c_byte(address)
     number = read_i2c_block(address)
-    return number[1] * 256 + number[2]
+	return number[1] * 256 + number[2]
 
 # Write PWM
 def analogWrite(pin, value):
