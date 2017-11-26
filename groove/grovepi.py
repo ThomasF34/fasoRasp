@@ -102,12 +102,10 @@ def pinMode(pin, mode):
 
 # Read analog value from Pin
 def analogRead(pin):
-	donnee = aRead_cmd+[pin,unused,unused]
-    time.sleep(0.05)
-	read_i2c_byte(address)
-    b=read_i2c_block(address)
-    print(b)
-	return b[1]*256+b[2]
+    write_i2c_block(address, aRead_cmd + [pin, unused, unused])
+    read_i2c_byte(address)
+    number = read_i2c_block(address)
+    return number[1] * 256 + number[2]
 
 # Write PWM
 def analogWrite(pin, value):
