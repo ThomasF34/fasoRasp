@@ -15,7 +15,7 @@ def turnOnAna(pin):
     analogWrite(pin,255)
 
 def turnOffAna(pin):
-    analogWrite(pin,0) 
+    analogWrite(pin,0)
 
 pin = 14
 init(pin)
