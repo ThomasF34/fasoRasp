@@ -21,6 +21,7 @@ pin = 14
 init(pin)
 while 1:
 	turnOnAna(pin)
+    print(analogRead(pin))
 	time.sleep(0.5)
 	turnOffAna(pin)
 	time.sleep(0.5)
