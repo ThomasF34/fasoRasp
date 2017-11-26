@@ -81,7 +81,7 @@ def read_i2c_block(address):
 def digitalRead(pin):
 	donnee = dRead_cmd+[pin,unused,unused]
 	write_i2c_block(address,donnee)
-    return read_i2c_byte(address)
+	return read_i2c_byte(address)
 
 # Arduino Digital Write
 def digitalWrite(pin, value):
