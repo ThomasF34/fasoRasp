@@ -12,7 +12,7 @@ def turnOff(pin):
        digitalWrite(pin,0)
 
 def turnOnAna(pin):
-    analogWrite(pin,1024)
+    analogWrite(pin,255)
 
 def turnOffAna(pin):
     analogWrite(pin,0) 
