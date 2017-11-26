@@ -80,39 +80,39 @@ def read_i2c_block(address):
 # Arduino Digital Read
 def digitalRead(pin):
 	donnee = dRead_cmd+[pin,unused,unused]
-        write_i2c_block(address,donnee)
-        return read_i2c_byte(address)
+    write_i2c_block(address,donnee)
+    return read_i2c_byte(address)
 
 # Arduino Digital Write
 def digitalWrite(pin, value):
-        donnee = dWrite_cmd+[pin,value,unused]
-        write_i2c_block(address,donnee)
+    donnee = dWrite_cmd+[pin,value,unused]
+    write_i2c_block(address,donnee)
 
 
 # Setting Up Pin mode on Arduino
 def pinMode(pin, mode):
 	donnee = pMode_cmd+[pin]
-        if mode == "INPUT":
-                donnee = donnee+[0]
-        elif mode == "OUTPUT":
-                donnee = donnee+[1]
-        donnee=donnee+[unused]
-        write_i2c_block(address,donnee)
+    if mode == "INPUT":
+            donnee = donnee+[0]
+    elif mode == "OUTPUT":
+            donnee = donnee+[1]
+    donnee=donnee+[unused]
+    write_i2c_block(address,donnee)
 
 
 # Read analog value from Pin
 def analogRead(pin):
 	donnee = aRead_cmd+[pin,unused,unused]
-        time.sleep(0.05)
+    time.sleep(0.05)
 	read_i2c_byte(address)
-        b=read_i2c_block(address)
-        print(b)
+    b=read_i2c_block(address)
+    print(b)
 	return b[1]*256+b[2]
 
 # Write PWM
 def analogWrite(pin, value):
-        donnee = aWrite_cmd+[pin,value,unused]
-        write_i2c_block(address,donnee)
+    donnee = aWrite_cmd+[pin,value,unused]
+    write_i2c_block(address,donnee)
 
 def coucou():
 	print("coucou")
