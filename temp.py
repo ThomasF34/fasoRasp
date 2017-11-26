@@ -1,5 +1,5 @@
 from groove.grovepi import *
 
-pin=14
+pin=15
 pinMode(pin,"INPUT")
 print(analogRead(pin))
