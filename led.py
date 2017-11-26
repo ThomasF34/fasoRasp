@@ -11,10 +11,16 @@ def turnOn(pin):
 def turnOff(pin):
        digitalWrite(pin,0)
 
-pin = 2
+def turnOnAna(pin):
+    analogWrite(pin,1024)
+
+def turnOffAna(pin):
+    analogWrite(pin,0) 
+
+pin = 14
 init(pin)
 while 1:
-	turnOn(pin)
+	turnOnAna(pin)
 	time.sleep(0.5)
-	turnOff(pin)
+	turnOffAna(pin)
 	time.sleep(0.5)
