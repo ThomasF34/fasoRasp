@@ -6,7 +6,7 @@ key = 'Y0D6SD5C247DXZIW'  # Thingspeak channel to update
 
 args = sys.argv
 
-for i in range(1,len(args))
+for i in range(1,len(args)) :
 	try :
 		value = int(args[i])
 		print(value)
