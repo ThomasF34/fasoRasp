@@ -1,4 +1,4 @@
-import httplib, urllib
+import http.client, urllib
 import time
 sleep = 20 # how many seconds to sleep between posts to the channel
 key = 'Y0D6SD5C247DXZIW'  # Thingspeak channel to update
