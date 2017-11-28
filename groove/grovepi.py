@@ -92,19 +92,19 @@ def digitalWrite(pin, value):
 # Setting Up Pin mode on Arduino
 def pinMode(pin, mode):
 	donnee = pMode_cmd+[pin]
-    	if mode == "INPUT":
+	if mode == "INPUT":
 		donnee = donnee+[0]
 	elif mode == "OUTPUT":
 		donnee = donnee+[1]
-    	donnee=donnee+[unused]
+	donnee=donnee+[unused]
 	write_i2c_block(address,donnee)
 
 
 # Read analog value from Pin
 def analogRead(pin):
 	write_i2c_block(address, aRead_cmd + [pin, unused, unused])
-    	read_i2c_byte(address)
-    	number = read_i2c_block(address)
+	read_i2c_byte(address)
+	number = read_i2c_block(address)
 	if number != -1 :
 		return number[1] * 256 + number[2]
 	else :
