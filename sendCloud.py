@@ -4,7 +4,18 @@ import time
 sleep = 20 # how many seconds to sleep between posts to the channel
 key = 'Y0D6SD5C247DXZIW'  # Thingspeak channel to update
 
-print(sys.argv)
+args = sys.argv
+
+if args[1] == int 
+
+for i in range(1,len(args))
+	try :
+		value = int(args[i])
+		print(value)
+	except ValueError : 
+		print("Tu me donne du texte con" + args[i])
+	
+	
 #for i in range(10):
 #	params = urllib.parse.urlencode({'field1': i, 'field2': i+1 , 'key':key }) 
 #	headers = {"Content-typZZe": "application/x-www-form-urlencoded","Accept": "text/plain"}
