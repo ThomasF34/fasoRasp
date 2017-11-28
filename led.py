@@ -4,26 +4,21 @@ import time
 
 def init(pin):
 	pinMode(pin,"OUTPUT")
-def pinInput(pin):
-	pinMode(pin,"INPUT")
+
 def turnOn(pin):
 	digitalWrite(pin,1)
 
 def turnOff(pin):
 	digitalWrite(pin,0)
 
-def turnOnAna(pin):
-	analogWrite(pin,255)
-
-def turnOffAna(pin):
-  	analogWrite(pin,0)
-
-pin = 14
+pin = 3
 init(pin)
-pinInput(15)
+
 while 1:
-    	turnOnAna(pin)
-	time.sleep(0.5)
+    turnOnAna(pin)
+	subprocess.run(["sendCloud.py",1,1])
+	time.sleep(20)
 	turnOffAna(pin)
-    	time.sleep(0.5)
-	print(analogRead(15))
+	subprocess.run(["sendCloud.py",0,0])
+    time.sleep(20)
+	
