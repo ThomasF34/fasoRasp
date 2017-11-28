@@ -10,8 +10,9 @@ for i in range(10):
 	try:
 		conn.request("POST", "/update", params, headers)
 		response = conn.getresponse()
-		print temp
-		print response.status, response.reason
+		print(i)
+		print(response.status)
+		print(response.reason)
 		data = response.read()
 		conn.close()
 	except:
