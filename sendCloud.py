@@ -16,5 +16,5 @@ for i in range(10):
 		data = response.read()
 		conn.close()
 	except:
-		print "connection failed"
+		print("connection failed")
 	time.sleep(sleep) 
