@@ -27,6 +27,11 @@ while True:
     	else :
         	print("Error")
         	time.sleep(10)
+            
+        print("Je zbifneznf z")
+        
+        time.sleep(2)
     except IOError:
         print ("Error")
-    
+        
+        
