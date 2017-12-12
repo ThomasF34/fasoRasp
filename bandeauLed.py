@@ -22,4 +22,5 @@ def stop(pin) :
 			time.sleep(0.02)
 		except :
 			print("Erreur")
+	analogWrite(pin,0)
 
