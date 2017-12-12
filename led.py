@@ -1,6 +1,9 @@
+#!/usr/bin/env python3
 
-from groove.grovepi import *
+from grovepi import *
 import time
+import subprocess
+import os
 
 def init(pin):
 	pinMode(pin,"OUTPUT")
@@ -10,15 +13,11 @@ def turnOn(pin):
 
 def turnOff(pin):
 	digitalWrite(pin,0)
-
 pin = 3
 init(pin)
-
 while 1:
-    turnOnAna(pin)
-	subprocess.run(["sendCloud.py",1,1])
-	time.sleep(20)
-	turnOffAna(pin)
-	subprocess.run(["sendCloud.py",0,0])
-    time.sleep(20)
-	
+	turnOn(pin)
+	time.sleep(2)
+	turnOff(pin)
+	time.sleep(2)
+time.sleep(20)
