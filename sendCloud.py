@@ -3,8 +3,8 @@
 import http.client, urllib
 import sys
 import time
-sleep = 20 # how many seconds to sleep between posts to the channel
-key = 'Y0D6SD5C247DXZIW'  # Thingspeak channel to update
+
+key = 'Y0D6SD5C247DXZIW'  # Clé de la chaine Thingspeak
 
 args = sys.argv
 print(args)
