@@ -16,13 +16,16 @@ while True:
 		wd = os.getcwd()
     	print(humidity)
     	print(temp)
-    	if not math.isnan(temp)  :
+		if humidity < 0 or temp < 0 :
+			print("Erreur de lecture")
+			time.sleep(10)
+    	else if not math.isnan(temp)  :
 			subprocess.run([wd+"/sendCloud.py",str(temp),str(humidity)])
 			bandeauLed.start(3)
         	time.sleep(20)
 			bandeauLed.stop(3)
     	else :
-        	print("not a number")
+        	print("Error")
         	time.sleep(10)
     except IOError:
         print ("Error")

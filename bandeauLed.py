@@ -10,7 +10,7 @@ def start(pin) :
 		try:
 			analogWrite(pin,i)
 			time.sleep(0.02)
-		except :
+		except IOError:
 			print("Erreur")
 	
 def stop(pin) :
@@ -20,7 +20,7 @@ def stop(pin) :
 		try:
 			analogWrite(pin,i)
 			time.sleep(0.02)
-		except :
+		except IOError:
 			print("Erreur")
 	analogWrite(pin,0)
 
