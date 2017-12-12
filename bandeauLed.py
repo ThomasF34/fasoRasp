@@ -10,8 +10,6 @@ def start(pin) :
 		try:
 			analogWrite(pin,i)
 			time.sleep(0.02)
-		except KeyboardInterrupt :
-			stop = False
 		except :
 			print("Erreur")
 	
@@ -22,8 +20,6 @@ def stop(pin) :
 		try:
 			analogWrite(pin,i)
 			time.sleep(0.02)
-		except KeyboardInterrupt :
-			stop = False
 		except :
 			print("Erreur")
 
