@@ -10,7 +10,7 @@ args = sys.argv
 print(args)
 
 try :
-	params = urllib.parse.urlencode({'field2': float(args[1]), 'field3': float(args[2]) , 'key':key }) 
+	params = urllib.parse.urlencode({'field1':float(args[1]),'field2': float(args[2]), 'field3': float(args[3]),'key':key }) 
 	headers = {"Content-typZZe": "application/x-www-form-urlencoded","Accept": "text/plain"}
 	conn = http.client.HTTPConnection("api.thingspeak.com:80")
 	conn.request("POST", "/update", params, headers)

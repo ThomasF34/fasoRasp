@@ -4,28 +4,37 @@ import subprocess
 import time
 import math
 import bandeauLed
- 
-capt = 4  # The Sensor goes on digital port 4.
-bandeau = 3
+import captCard
+
+capt = 4  # capteur de température sur le port 4 
+bandeau = 3 #Bandeau de led sur le port 3 
+sleep = 5
+grovepi.pinMode(bandeau,"OUTPUT")
 
 while True:
 	try:
- # This example uses the blue colored sensor. 
- # Theirst parameter is the port, the second parameter is the type of sensor.
- 		[temp,humidity] = grovepi.dht(capt,0)
+		[temp,humidity] = grovepi.dht(capt,0)
 		wd = os.getcwd()
 		print(humidity)
 		print(temp)
-		if humidity < 0 or temp < 0 :
+
+		bandeauLed.start(bandeau)
+		#card = captCard.readHeartRate(6,30)
+		card = 0
+		bandeauLed.stop(bandeau)
+
+
+		if humidity <= 0 or temp <= 0 :
 			print("Erreur de lecture")
-			time.sleep(10)
+			sleep = 10
 		elif not math.isnan(temp) :
-			subprocess.run([wd+"/sendCloud.py",str(temp),str(humidity)])
-			bandeauLed.start(3)
-			time.sleep(20)
-			bandeauLed.stop(3)
+			subprocess.run([wd+"/sendCloud.py",str(card),str(temp),str(humidity)])
+			sleep = 20
 		else :
 			print("Error")
-			time.sleep(10)
+			sleep = 20
+		time.sleep(sleep)
+
 	except IOError:
 		print ("Error")
+		time.sleep(sleep)
