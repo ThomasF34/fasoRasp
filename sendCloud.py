@@ -14,9 +14,11 @@ try :
 	headers = {"Content-typZZe": "application/x-www-form-urlencoded","Accept": "text/plain"}
 	conn = http.client.HTTPConnection("api.thingspeak.com:80")
 	conn.request("POST", "/update", params, headers)
+	#On effectue la requete HTTP aupres de ThingSpeak 
 	response = conn.getresponse()
 	print(response.status)
 	print(response.reason)
+	#Reason et Status permettront de savoir comment l'envoi s'est passé.
 	data = response.read()
 	conn.close()
 except ValueError :
